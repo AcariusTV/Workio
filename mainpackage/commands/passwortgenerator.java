@@ -1,8 +1,10 @@
 package mainpackage.commands;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import java.awt.*;
 import java.util.Random;
 
 public class passwortgenerator extends ListenerAdapter {
@@ -15,7 +17,12 @@ public class passwortgenerator extends ListenerAdapter {
             int length = event.getOption("länge").getAsInt();
 
             String password = generatePassword(length);
-            event.reply("\uD804\uDC49 Dein **generiertes, sicheres** Passwort lautet: ||" + password + "||. Bewahre es **sicher auf** und teile es mit **niemand anderem**.").setEphemeral(true).queue();
+            EmbedBuilder b = new EmbedBuilder();
+            b.setColor(Color.decode("#302c34"));
+            b.setDescription("`📜`〡**DEIN SICHERES, NEUES PASSWORT** \n" +
+                    "\uD804\uDC49 Hier ist dein **sicheres, neues Passwort**: ||" +  password + "||. Bewahre es **sicher auf** und zeige es **niemand anderem**!");
+
+            event.replyEmbeds(b.build()).setEphemeral(true).queue();
 
         }
 
