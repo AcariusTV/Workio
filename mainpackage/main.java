@@ -15,7 +15,7 @@ public class main {
     public static void main(String[] args) {
 
         //SETUP
-        String TOKEN = "MTIxNzM4NjM2OTcyMzI3MzIyNg.Gik4hO.F42iVbYvXtW7iX3J8qrRNg1WiTfnOzfKclIfaE";
+        String TOKEN = "";
         JDABuilder builder = JDABuilder.createDefault(TOKEN, GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.DIRECT_MESSAGE_TYPING, GatewayIntent.DIRECT_MESSAGE_REACTIONS)
                 .disableCache(CacheFlag.VOICE_STATE, CacheFlag.EMOJI, CacheFlag.CLIENT_STATUS);
 
